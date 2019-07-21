@@ -1,0 +1,27 @@
+server: 
+  port: 9008
+spring: 
+  application:  
+    name: tensquare-user #指定服务名
+  datasource:  
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.92.140:3306/tensquare_user?characterEncoding=UTF8
+    username: root
+    password: root
+  jpa: 
+    database: MySQL
+    show-sql: true
+  redis:
+    host: 192.168.92.140
+  rabbitmq:
+    host: 192.168.92.140
+jwt:
+  config:
+    key: itcast
+    ttl: 3600000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/  #这个是eureka服务中心对外提供的一个注册地址
+  instance:
+    prefer-ip-address: true #加上这个就是为了项目布到线上的时候模块与模块之间可以互相访问
